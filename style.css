@@ -1,0 +1,84 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #08101a;
+    width: 100vw;
+    height: 100vh;
+}
+
+.animCard {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.animCard span:nth-child(1) {
+    width: 140px;
+    height: 140px;
+    border: 10px solid rgba(255, 255, 255, 0);
+    border-radius: 50%;
+    border-top: 10px solid white;
+    border-bottom: 10px solid white;
+    position: absolute;
+    z-index: 1;
+    animation: anime 1.5s linear infinite;
+}
+
+.animCard span:nth-child(2) {
+    position: absolute;
+    z-index: 2;
+    width: 90px;
+    height: 90px;
+    border: 10px solid rgba(5, 230, 5, 0);
+    border-radius: 50%;
+    border-left: 10px solid rgb(5, 230, 5);
+    border-right: 10px solid rgb(5, 230, 5);
+    animation: animeTwo 1.5s linear infinite;
+}
+.animCard span:nth-child(3) {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(white 50%, rgb(5, 230, 5) 50%);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 3;
+    animation: anime 1.5s linear infinite;
+}
+
+.animCard span:nth-child(3)::before {
+    content: '';
+    width: 20px;
+    height: 40px;
+    background: linear-gradient(rgb(5, 230, 5) 50%, white 50%);
+    position: absolute;
+    border-radius: 40px 0 0 40px;
+}
+
+@keyframes anime {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes animeTwo {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(-360deg);
+    }
+}
